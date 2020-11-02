@@ -1,21 +1,21 @@
 <?php
 namespace App\Module;
 
-use App\Module\Security\UrlTreatment;
+use App\Module\Security\Filter;
 
 class Router{
 
-    protected $_sPage    = '';
-    protected $_sFolder = '';
+    protected $_sPage           = '';
+    protected $_sFolder         = '';
+    protected $_aParam          = array();
     private $_aCleanedUrl       = array();
-    protected $_aParam = array();
+
 
     public function __construct()
     {
-        $this->_aCleanedUrl = (new UrlTreatment())->getParametres();
+        $this->_aCleanedUrl = (new Filter())->__setParameters();
         $this->router();
     }
-
 
     private function router()
     {
@@ -32,9 +32,4 @@ class Router{
                 break;
         }
     }
-
-
-
-
-
 }
