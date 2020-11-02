@@ -14,29 +14,8 @@ use App\Module\Security\{
 };
 
 use App\Module\{
-  Routeur
+  Router
 };
 
-
-//$callRouteur = new Routeur;
-//$path = $callRouteur->__getPath();
-//$param = $callRouteur->__getParam();
-
-new TemplateAdmin();
-
-
-
-
-//// initialisation des objets
-//$gestionRoute           = new \App\Module\Routeur;
-//$displayView = new \App\Module\administration_template\TemplateAdmin;
-////Routing
-//$parametres             = array();
-//
-//// traitement des parametres
-//if ($gestionRoute->traitementUrl() !== NULL) {
-//    $parametres = $gestionRoute->traitementUrl();
-//}
-//$gestionRoute->traitementRoute($parametres);
-//
-//$displayView->adminView($gestionRoute->setPath(), $gestionRoute->setParam());
+$displayView = new TemplateAdmin();
+$displayView->showTemplate();

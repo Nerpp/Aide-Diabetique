@@ -1,19 +1,14 @@
 <?php
 namespace App\Module\AdministrationTemplates;
 
-use App\Module\Routeur;
+use App\Module\Router;
 
 
-class TemplateAdmin
+class TemplateAdmin extends Router
 {
 
-    public function __construct()
+    public function showTemplate()
     {
-        $callRouteur = new Routeur;
-        $page = $callRouteur->__setPage();
-        $param = $callRouteur->__setParam();
-        $folder = $callRouteur->__setFolder();
-
         $loader = new \Twig\Loader\FilesystemLoader('templates');
 
         $twig = new \Twig\Environment($loader, [
@@ -25,9 +20,9 @@ class TemplateAdmin
         $twig->addExtension(new MesExtensions());
 
 //        $twig->addGlobal('session', $_SESSION);
-        $twig->addGlobal('current_page', $page);
+        $twig->addGlobal('current_page', $this->_sPage);
 
-        echo $twig->render($folder."\\".$page.'.view.twig', $param);
+        echo $twig->render($this->_sFolder."\\".$this->_sPage.'.view.twig', $this->_aParam);
     }
 
 }

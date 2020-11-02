@@ -3,12 +3,12 @@ namespace App\Module;
 
 use App\Module\Security\UrlTreatment;
 
-class Routeur{
+class Router{
 
-    private $_sPage    = '';
-    private $_sFolder = '';
+    protected $_sPage    = '';
+    protected $_sFolder = '';
     private $_aCleanedUrl       = array();
-    private $_aParam = array();
+    protected $_aParam = array();
 
     public function __construct()
     {
@@ -16,21 +16,6 @@ class Routeur{
         $this->router();
     }
 
-    public function __setPage()
-    {
-      return  $this->_sPage;
-
-    }
-
-    public function __setFolder()
-    {
-        return $this->_sFolder;
-    }
-
-    public function __setParam()
-    {
-        return $this->_aParam;
-    }
 
     private function router()
     {
