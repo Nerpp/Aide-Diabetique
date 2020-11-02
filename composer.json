@@ -1,11 +1,10 @@
 {
-    "name": "Nerpp/diabete",
-    "description": "tableau d'affichage diab\u0000te",
+    "name": "nerpp/diabete",
+    "description": "tableau d'affichage diabete",
     "require": {
         "twig/twig": "^2.0"
     },
     "autoload": {
-        "optimize-autoloader": true,
         "psr-4": {
             "App\\":"src/"
         }
