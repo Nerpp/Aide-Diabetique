@@ -18,4 +18,5 @@ use App\Module\{
 };
 
 $displayView = new TemplateAdmin();
+$displayView->router();
 $displayView->showTemplate();

@@ -1,6 +1,7 @@
 <?php
 namespace App\Module;
 
+use App\Controller\IndexController;
 use App\Module\Security\Filter;
 
 class Router{
@@ -8,22 +9,29 @@ class Router{
     protected $_sPage           = '';
     protected $_sFolder         = '';
     protected $_aParam          = array();
-    private $_aCleanedUrl       = array();
-
+    protected $_aCleanedUrl       = array();
 
     public function __construct()
     {
         $this->_aCleanedUrl = (new Filter())->__setParameters();
-        $this->router();
     }
 
-    private function router()
+    public function router()
     {
-        $this->_sPage = (empty($this->_aCleanedUrl['p'])) ? 'index' : $this->_aCleanedUrl['p'];
+
+        $this->_sPage = (!isset($this->_aCleanedUrl['p'])) ? 'index' : $this->_aCleanedUrl['p'];
 
         switch ($this->_sPage){
             case 'index':
                 $this->_sFolder = 'index';
+                break;
+
+            case'gestion':
+                $this->_sFolder = 'gestion';
+                break;
+
+            case 'registration':
+                $this->_sFolder = 'registration';
                 break;
 
             default:

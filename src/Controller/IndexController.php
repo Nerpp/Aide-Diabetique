@@ -7,5 +7,4 @@ use App\Module\Router;
 class IndexController extends Router
 {
 
-
 }

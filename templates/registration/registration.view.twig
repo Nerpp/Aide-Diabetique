@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+
+{% import "macroForm\\form.twig" as forms %}
+
+
+{% block header %}
+    <h1>Inscription</h1>
+{% endblock %}
+
+{% block main %}
+<form name="{{ current_page }}Formulaire" action="index.php" method="post" class="was-validated">
+    <p>
+        {{ forms.input('pseudonyme','votre pseudonyme',pseudonyme|default(''),'texte') }}
+
+        {% if pseudoErr|length > 0 %}
+            <span class="alert alert-danger">{{ pseudoErr }}</span>
+        {% endif %}
+    </p>
+    <p>
+        <button type="submit" class="btn btn-primary">Soumettre</button>
+        <input type="hidden" name="p" id="page" value="creationCompte">
+    </p>
+</form>
+{% endblock %}

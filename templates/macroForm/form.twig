@@ -1,0 +1,7 @@
+{% macro input(name, label,value,type) %}
+    <div class="form-group">
+        <label for="{{ name }}">{{ label | capitalize }} :</label>
+        <input type="{{ type }}" class="form-control" id="{{ name }}" placeholder="{{ label }}" value="{{ value }}"  name="{{ name }}"
+               class="valid-feedback" class="invalid-feedback" required>
+    </div>
+{% endmacro input %}

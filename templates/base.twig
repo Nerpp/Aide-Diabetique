@@ -53,10 +53,18 @@
 
 <div class="container">
     <div class="col-12 text-center">
-        <h1>Index</h1>
+        {% block header %}
+
+        {% endblock %}
     </div>
 </div>
 
+
+<div class="container">
+    <div class="col-12">
+        {% block main %}{% endblock %}
+    </div>
+</div>
 
 
 <!-- javascript et Ajax pour le Caroussel -->

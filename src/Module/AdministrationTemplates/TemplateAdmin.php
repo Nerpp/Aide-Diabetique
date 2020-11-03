@@ -1,6 +1,7 @@
 <?php
 namespace App\Module\AdministrationTemplates;
 
+use App\Controller\IndexController;
 use App\Module\Router;
 
 
