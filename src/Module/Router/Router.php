@@ -1,5 +1,5 @@
 <?php
-namespace App\Module;
+namespace App\Module\Router;
 
 use App\Controller\IndexController;
 use App\Module\Security\Filter;

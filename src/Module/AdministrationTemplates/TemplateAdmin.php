@@ -2,7 +2,7 @@
 namespace App\Module\AdministrationTemplates;
 
 use App\Controller\IndexController;
-use App\Module\Router;
+use App\Module\Router\Router;
 
 
 class TemplateAdmin extends Router
